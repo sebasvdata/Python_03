@@ -9,7 +9,8 @@ if __name__ == "__main__":
         except ValueError:
             print(f"Invalid parameter: '{arg}'")
     if not scores:
-        print("No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+        print("No scores provided. Usage: python3 "
+              "ft_score_analytics.py <score1> <score2> ...")
     else:
         average_sum: float = sum(scores) / len(scores)
         print(f"Scores processed: {scores}")
