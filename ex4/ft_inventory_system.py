@@ -25,6 +25,7 @@ def add_inventory(argv: list[str]) -> dict[str, int]:
         inv[item_name] = item_quantity
     return inv
 
+
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
 
@@ -36,16 +37,16 @@ if __name__ == "__main__":
         values = list(inventory.values())
         for item in inventory.keys():
             keys.append(item)
-    
+
         highest_item = keys[0]
         highest_value = values[0]
         lowest_item = keys[0]
         lowest_value = values[0]
-    
+
         print(f"Got inventory: {inventory}")
         print(f"Item list: {keys}")
         print(f"Total quantity of the {len(keys)} items: {sum(values)}")
-    
+
         for item_key, item_value in inventory.items():
             if item_value > highest_value:
                 highest_value = item_value
@@ -55,10 +56,12 @@ if __name__ == "__main__":
                 lowest_item = item_key
             percentage: float = round(item_value * 100 / sum(values), 1)
             print(f"Item {item_key} represents {percentage}%")
-    
-        print(f"Item most abundant: {highest_item} with quantity {highest_value}")
-        print(f"Item least abundant: {lowest_item} with quantity {lowest_value}")
-    
+
+        print(f"Item most abundant: {highest_item} "
+              f"with quantity {highest_value}")
+        print(f"Item least abundant: {lowest_item} "
+              f"with quantity {lowest_value}")
+
         inventory.update({"magic_item": 1})
         print(f"Updated inventory: {inventory}")
     except EmptyInventory as error:
