@@ -2,9 +2,12 @@ import math
 
 
 def get_player_pos() -> tuple[float, float, float]:
-    coordinates: str = input(
-        "Enter new coordinates as floats in format 'x,y,z': "
-    )
+    try:
+        coordinates: str = input(
+            "Enter new coordinates as floats in format 'x,y,z': "
+        )
+    except KeyboardInterrupt:
+        raise SystemExit("\nKeyboardInterrupt - exiting")
 
     separate: list[str] = coordinates.split(",")
 
@@ -35,10 +38,10 @@ if __name__ == "__main__":
     first_z: float = first_tuple_coord[2]
     print(f"Got a first tuple: {first_tuple_coord}")
     print(f"It includes: X={first_x},"
-          f" Y={first_y}, Z={first_z}")
+        f" Y={first_y}, Z={first_z}")
     first_center: float = round(math.sqrt(first_x ** 2 +
-                                          first_y ** 2 +
-                                          first_z ** 2), 4)
+                                        first_y ** 2 +
+                                        first_z ** 2), 4)
     print(f"Distance to center: {first_center}\n")
 
     print("Get a second set of coordinates")
@@ -47,6 +50,6 @@ if __name__ == "__main__":
     second_y: float = second_tuple_coord[1]
     second_z: float = second_tuple_coord[2]
     distance: float = round(math.sqrt(((second_x - first_x) ** 2) +
-                                      (second_y - first_y) ** 2 +
-                                      (second_z - first_z) ** 2), 4)
+                                    (second_y - first_y) ** 2 +
+                                    (second_z - first_z) ** 2), 4)
     print(f"Distance between the 2 sets of coordinates: {distance}")
