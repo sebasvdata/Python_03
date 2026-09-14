@@ -11,6 +11,6 @@ if __name__ == "__main__":
         print("No arguments provided!")
     else:
         print(f"Arguments received: {len(sys.argv)}")
-        for arg_num, arg in enumerate(sys.argv):
+        for arg_num, arg in enumerate(sys.argv, 1):
             print(f"Argument {arg_num}: {arg}")
     print(f"Total arguments: {total_count}")

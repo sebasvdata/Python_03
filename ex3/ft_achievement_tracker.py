@@ -55,10 +55,10 @@ if __name__ == "__main__":
     print(f"Only Charlie has: {only_charlie}")
     print(f"Only Dylan has: {only_dylan}\n")
 
-    missing_alice = all_achievements.difference(alice)
-    missing_bob = all_achievements.difference(bob)
-    missing_charlie = all_achievements.difference(charlie)
-    missing_dylan = all_achievements.difference(dylan)
+    missing_alice = set(achievements).difference(alice)
+    missing_bob = set(achievements).difference(bob)
+    missing_charlie = set(achievements).difference(charlie)
+    missing_dylan = set(achievements).difference(dylan)
 
     print(f"Alice is missing: {missing_alice}")
     print(f"Bob is missing: {missing_bob}")

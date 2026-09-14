@@ -54,7 +54,10 @@ if __name__ == "__main__":
             elif item_value < lowest_value:
                 lowest_value = item_value
                 lowest_item = item_key
-            percentage: float = round(item_value * 100 / sum(values), 1)
+            if sum(values) > 0:
+                percentage: float = round(item_value * 100 / sum(values), 1)
+            else:
+                percentage = 0.0
             print(f"Item {item_key} represents {percentage}%")
 
         print(f"Item most abundant: {highest_item} "
